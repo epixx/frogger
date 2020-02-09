@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.game {
+  --tile-width: 101px;
+  --tile-height: 84px;
+  --tile-offset-y: -50px;
+
+  display: flex;
+  height: 100vh;
+}
+
+.game__field {
+  position: relative;
+  width: calc(var(--tile-width) * 7);
+  height: calc(var(--tile-height) * 6);
+  margin: auto;
+  background:
+    url(img/grass-block.png) 0 calc(var(--tile-height) * 5 + var(--tile-offset-y)),
+    url(img/stone-block.png) 0 calc(var(--tile-height) * 4 + var(--tile-offset-y)),
+    url(img/stone-block.png) 0 calc(var(--tile-height) * 3 + var(--tile-offset-y)),
+    url(img/stone-block.png) 0 calc(var(--tile-height) * 2 + var(--tile-offset-y)),
+    url(img/stone-block.png) 0 calc(var(--tile-height) * 1 + var(--tile-offset-y)),
+    url(img/water-block.png) 0 calc(var(--tile-height) * 0 + var(--tile-offset-y));
+  background-repeat: repeat-x;
+  overflow: hidden;
+}
+
+.game__hero {
+  position: absolute;
+  left: 0;
+  top: -75px;
+}
+
+.game__bug {
+  position: absolute;
+  left: 0;
+  top: -72px;
+}
